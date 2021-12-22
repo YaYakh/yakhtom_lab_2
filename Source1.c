@@ -11,11 +11,7 @@ void main1(int n, int min, int max)
 
   FILE* f;
   f = fopen("txt.txt", "w");
-  FILE* nf;
-  nf = fopen("n.txt", "w");
-
-  if (nf != NULL)
-    fprintf(nf, "%d\n", n);
+  
 
 
   if (f != NULL) {
@@ -26,7 +22,7 @@ void main1(int n, int min, int max)
     }
   }
   fclose(f);
-  fclose(nf);
+  
 
   return 0;
 }
