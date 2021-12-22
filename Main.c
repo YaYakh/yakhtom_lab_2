@@ -26,7 +26,7 @@ void bubblesort(char* a, int n)
 void fastsort(char* a, int n) {
   int i = 0;
   int j = n - 1;
-  int m = a[n / 2];
+  char m = a[n / 2];
 
   do {
     while (a[i] < m) {
@@ -37,7 +37,7 @@ void fastsort(char* a, int n) {
     }
 
     if (i <= j) {
-      int t = a[i];
+      char t = a[i];
       a[i] = a[j];
       a[j] = t;
 
@@ -114,13 +114,7 @@ int main()
   char nc[8];
   int intf = 0;
 
-  FILE* nf;
-  nf = fopen("n.txt", "r");
-
-  if (nf != NULL)
-  {
-    fscanf(nf, "%d", &intf);
-  }
+  intf = n;
 
   FILE* f;
   f = fopen("txt.txt", "r");
@@ -186,12 +180,14 @@ int main()
 
   }
 
-  for (int i = 0; i < intf; i++)
+
+  // если раскомментировать эту часть, то при выходе из программы без сброса массива можно будет проверить правильность сортировки, т.к. массив будет выведен в интовых значениях
+  /*for (int i = 0; i < intf; i++)
   {
     printf("%d\n", mas[i]);
-  }
+  }*/
 
   fclose(f);
-  fclose(nf);
+ 
   return 0;
 }
